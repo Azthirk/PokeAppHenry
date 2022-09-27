@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2bb2b53a.chunk.css",
+    "main.js": "/static/js/main.d07f5b6c.chunk.js",
+    "main.js.map": "/static/js/main.d07f5b6c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.723cfbcc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.723cfbcc.js.map",
+    "static/js/2.2e62ea1b.chunk.js": "/static/js/2.2e62ea1b.chunk.js",
+    "static/js/2.2e62ea1b.chunk.js.map": "/static/js/2.2e62ea1b.chunk.js.map",
+    "static/js/3.ec930cd4.chunk.js": "/static/js/3.ec930cd4.chunk.js",
+    "static/js/3.ec930cd4.chunk.js.map": "/static/js/3.ec930cd4.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.2bb2b53a.chunk.css.map": "/static/css/main.2bb2b53a.chunk.css.map",
+    "static/js/2.2e62ea1b.chunk.js.LICENSE.txt": "/static/js/2.2e62ea1b.chunk.js.LICENSE.txt",
+    "static/media/LogoPokemon.88ce61a9.png": "/static/media/LogoPokemon.88ce61a9.png",
+    "static/media/LogoPokemon2.03d2cb1c.png": "/static/media/LogoPokemon2.03d2cb1c.png",
+    "static/media/align-justify.048850b2.svg": "/static/media/align-justify.048850b2.svg",
+    "static/media/arrow-left.c73c1591.svg": "/static/media/arrow-left.c73c1591.svg",
+    "static/media/arrow-right.0196bfd2.svg": "/static/media/arrow-right.0196bfd2.svg",
+    "static/media/mew.2a120bba.png": "/static/media/mew.2a120bba.png",
+    "static/media/mewtwo.e6dae905.png": "/static/media/mewtwo.e6dae905.png",
+    "static/media/pikachu.d507ab5d.png": "/static/media/pikachu.d507ab5d.png",
+    "static/media/rotate-cw.93ad3061.svg": "/static/media/rotate-cw.93ad3061.svg",
+    "static/media/search.7323df73.svg": "/static/media/search.7323df73.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.723cfbcc.js",
+    "static/js/2.2e62ea1b.chunk.js",
+    "static/css/main.2bb2b53a.chunk.css",
+    "static/js/main.d07f5b6c.chunk.js"
+  ]
+}

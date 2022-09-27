@@ -1,0 +1,126 @@
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 21px;
+    height: auto;
+}
+
+
+.header p{
+    font-weight: bold;
+    color: white;
+    outline: none;
+    
+}
+
+
+.addPokemon{
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    margin-right: 10px;
+}
+
+.addPokemon:hover{
+	text-shadow: 0px 0px 8px rgb(255, 255, 255);
+}
+
+.addPokemon:active p{
+	transform: scale(0.9) ;
+	-webkit-transform: scale(0.9) ;
+	-moz-transform: scale(0.9) ;
+}
+
+.imgLogox{
+    margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 508px) {
+    .headerDetail{
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .containerLandingGeneralForm img{
+        width: 75%;
+        height: 75%;
+    }
+}
+@media (max-width: 420px) {
+    .cardContainer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 328px) {
+    .header {
+        width: 328px;
+    }
+    .cardContainer{
+        margin-left: 50px;
+    }
+    .number{
+        margin-left: 130px;
+        display: flex;
+    }
+    .ContenedorPaginado{
+        margin-left: 50px;
+        flex-direction: column;
+    }
+    .number{
+        display: none
+    }
+    .containerLandingGeneralForm{
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 286px) {
+
+    .headerDetail{
+        margin-left: 40px;
+    }
+    .btnx{
+        margin-left: 160px;
+    }
+    .ContenedorPaginado{
+        margin-left: -90px;
+    }
+    .containerLandingGeneralForm{
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 250px) {
+    .containerLandingGeneralForm{
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 190px) {
+    .headerDetail{
+        margin-left: 85px;
+    }
+    .ContenedorPaginado{
+        margin-left: -20px;
+    }
+    .containerLandingGeneralForm{
+        margin-left: 150px;
+    }
+}
+

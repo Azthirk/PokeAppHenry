@@ -1,0 +1,78 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.438);
+    color: white;
+}
+
+.container img{
+    filter: drop-shadow(4px 2px 4px rgb(0, 0, 0.438));
+}
+.pokeInfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.back{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.infoContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+.stats{
+    position: relative;
+    display: inline-block;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.headerDetail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.headerDetail h1{
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+.headerDetail p{
+    margin-left: 10px;
+    margin-top: -15px;
+}
+
+.pokeInfo2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.pokeInfo2 div{
+    margin-right: 10px;
+}
+
+.skills{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
+.dates{
+    margin-left: 15px;
+    margin-right: 15px;
+}
