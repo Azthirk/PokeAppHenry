@@ -28,6 +28,7 @@
     margin-left: 70px;
     margin-bottom: 30px;
 }
+
 .buttonx {
     color:rgb(0, 113, 218);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -54,6 +55,9 @@
 @media (max-width: 420px) {
     .containerLandingGeneral {
         flex-direction: column;
-        margin-left: 20px;
+        margin-left: 25px;
+    }
+    .buttonx{
+        margin-right: 60px;
     }
 }

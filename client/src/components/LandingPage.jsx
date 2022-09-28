@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Styles/LandingPage.css';
+import "./Styles/LandingPage.css";
 import imageLogo from "../sourceImg/LogoPokemon2.png"
 import imageLogo2 from "../sourceImg/mewtwo.png"
 export default function LandingPage() {

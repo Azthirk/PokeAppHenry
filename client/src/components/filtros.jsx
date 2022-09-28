@@ -1,10 +1,11 @@
 import React from "react";
 import "./Styles/filtros.css";
-import { filterType, filterCreated, Sort, filterAttack} from "../redux/actions/index.js";
+import { filterType, filterCreated, Sort, filterAttack, pageBack} from "../redux/actions/index.js";
 
 export default function filtros({dispatchx, typePokemons}){
 
     function handleFilterType(e) {
+        dispatchx(pageBack(1));
         dispatchx(filterType(e.target.value));
     }
     
@@ -31,9 +32,9 @@ export default function filtros({dispatchx, typePokemons}){
           </select>
 
           <select name="selects" onChange={handleFilterAttack} className="attack" >
-            <option value="FORCE"> Force </option>
-            <option value="HIGHFORCE">High Force</option>
-            <option value="LOWERFORCE">Lower Force</option>
+            <option value="FORCE"> Attack </option>
+            <option value="HIGHFORCE">Max Attack</option>
+            <option value="LOWERFORCE">Min Attack</option>
           </select>
 
           <select name="select" onChange={onSelectsChange} className="a-z">

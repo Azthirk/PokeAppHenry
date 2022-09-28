@@ -28,11 +28,9 @@ const rootReducer = (state = initialState, action) => {
         };
   
     case FILTER_TYPE:
-      const allPokemons = state.allPokemons;
-      const typeFiltered =
-        action.payload === "TYPE"
-          ? allPokemons
-          : allPokemons.filter((e) => 
+      const allPokemonsx = state.allPokemons;
+      const typeFiltered = action.payload === "TYPE"
+          ? allPokemonsx : allPokemonsx.filter((e) => 
           typeof e.types[0] === "object" && e.types.length > 1 ? e.types[0].name === action.payload || e.types[1].name === action.payload:
           typeof e.types[0] === "object" && e.types.length === 1 ? e.types[0].name === action.payload:
           e.types.includes(action.payload)

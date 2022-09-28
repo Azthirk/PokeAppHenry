@@ -15,9 +15,6 @@ export default function Home() {
   var pokemons = useSelector((state) => state.pokemons);
   var allPokemons = useSelector((state) => state.allPokemons);
   var pagBack = useSelector((state) => state.pageBack);
-
-  console.log(pokemons);
-  console.log(allPokemons);
   
   useEffect(() => {
       if(pokemons.length === 0){
@@ -33,7 +30,7 @@ export default function Home() {
   var pokemonsForPage = pokemons.slice(((pageActual * 12) - 12), (pageActual * 12));
   if(pagBack !== pageActual)pokemonsForPage = pokemons.slice(( ((pagBack * 12) - 12 )), (pagBack * 12));
   pageActual = pagBack
-  
+
   const pags = (i) => {
     totalPage(i);
     dispatch(pageBack(i));
@@ -60,7 +57,7 @@ export default function Home() {
           }
 
         </div>
-        {pokemons.length !== 0 ?
+        {pokemons.length > 1 ?
         <div className="ContenedorPaginado">
           {pageActual !== 1 ? <button className="btnx" onClick={() => pags(pageActual - 1)}> Back </button> : <button className="btnx" style={{visibility: "hidden"}}> Back </button>}
           <Paginado

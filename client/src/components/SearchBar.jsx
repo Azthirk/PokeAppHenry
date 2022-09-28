@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchPoke, resetPage} from "../redux/actions/index.js";
 import "./Styles/SearchBar.css";
-import Search from '../sourceImg/search.svg';
-import Reset from '../sourceImg/rotate-cw.svg';
-import Filter from '../sourceImg/align-justify.svg';
+import Search from "../sourceImg/search.svg";
+import Reset from "../sourceImg/rotate-cw.svg";
+import Filter from "../sourceImg/align-justify.svg";
 import Filtros from "./filtros.jsx";
 import {useHistory} from "react-router-dom";
 
@@ -21,14 +21,14 @@ export default function SearchBar() {
 
   function handleSubmit(i){
     i.preventDefault();
-    dispatch(resetPage())
-    dispatch(searchPoke(name))
+    dispatch(resetPage());
+    dispatch(searchPoke(name));
     setName("");
     history.push("/home");
   }
 
   function handleReset(){
-    dispatch(resetPage())
+    dispatch(resetPage());
     history.push("/home");
   }
   function handleViewFilter(){
@@ -37,7 +37,6 @@ export default function SearchBar() {
 
   return (
     <div  >
-      
       <div >
         <div className="search">
           
@@ -70,11 +69,6 @@ export default function SearchBar() {
         </div>
       </div>
       </div>
-
-
-
     </div>
-
-    
   );
 }

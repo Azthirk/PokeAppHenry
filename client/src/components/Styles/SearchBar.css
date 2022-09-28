@@ -1,8 +1,8 @@
 .search {
   margin-top: -11px;
-    display: flex;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .searchTerm {

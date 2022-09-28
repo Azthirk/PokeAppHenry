@@ -1,8 +1,8 @@
 import React from "react";
 import "./Styles/CardPokemon.css";
-import * as Images from './sourcesComponents/images.jsx';
-import * as Colors from './sourcesComponents/colors.jsx';
-import image2 from "../sourceImg/pikachu.png"
+import * as Images from "./sourcesComponents/images.jsx";
+import * as Colors from "./sourcesComponents/colors.jsx";
+import image2 from "../sourceImg/pikachu.png";
 export default function CardPokemon({ name, types, image, id }) {
 
   var imgType;

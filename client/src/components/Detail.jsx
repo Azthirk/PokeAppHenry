@@ -7,9 +7,9 @@ import * as Images from "./sourcesComponents/images.jsx";
 import * as Colors from "./sourcesComponents/colors.jsx";
 import image2 from "../sourceImg/pikachu.png";
 import Stats from "./Stats.jsx";
-import './Styles/Detail.css'
-import imagenBack from "../sourceImg/arrow-left.svg"
-import imagenBack2 from "../sourceImg/arrow-right.svg"
+import "./Styles/Detail.css";
+import imagenBack from "../sourceImg/arrow-left.svg";
+import imagenBack2 from "../sourceImg/arrow-right.svg";
 import Loading from "./Loading.jsx";
 
 export default function Detail(pokeId) {

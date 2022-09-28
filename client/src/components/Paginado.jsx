@@ -12,7 +12,7 @@ export default function Paginado({ allPokemons, pags }) {
     <nav>
       <ul className='paginado' >
         {pageNumbers && pageNumbers.map(number => {
-             return (<div className="number" key ={number}>
+             return (<div className="number" key ={number} >
                 <button className="btn" onClick={() => pags(number)}> {number} </button>
             </div>)
           })
