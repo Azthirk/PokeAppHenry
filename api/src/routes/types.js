@@ -9,9 +9,9 @@ router.get("/", async (req, res) => {
         const api = await axios.get("https://pokeapi.co/api/v2/type");
         for (tipoActual of api.data.results) {
             const find = await Type.findOne({ where: {name: tipoActual.name}});
-            if (!find) await Type.create({ name: tipoActual.name }); //Lo agrego
+            if (!find) await Type.create({ name: tipoActual.name });
         }
-      res.json(await Type.findAll()); //Devuelvo todos los tipos de la base de atos.
+      res.json(await Type.findAll());
     } catch (error) {
       res.send(error);
     }
