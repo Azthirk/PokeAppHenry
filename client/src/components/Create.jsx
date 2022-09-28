@@ -9,6 +9,12 @@ import "./Styles/Create.css";
 
 var errors = {};
 
+function validar() {
+  const input = document.getElementById('name');
+  if(!input.checkValidity()) return false;
+  return true;
+}
+
 function validate(pokemon){
   errors.name = "A name is required";
   errors.life = "A life is required";
@@ -20,7 +26,6 @@ function validate(pokemon){
   errors.skills = "A skills is required";
   errors.description = "A description is required";
   errors.types = "A types is required";
-
   if (pokemon.name) delete errors.name;
   if (pokemon.life) delete errors.life;
   if (pokemon.attack) delete errors.attack;
@@ -30,11 +35,13 @@ function validate(pokemon){
   if (pokemon.weight) delete errors.weight;
   if (pokemon.skills) delete errors.skills;
   if (pokemon.description) delete errors.description;
+  if (pokemon.types.length > 0) delete errors.types;
+  if(validar() === false) errors.name = "Invalid character";
 
   return errors;
 }
 
-function typeValidate(eligio){
+function typeValidate(eligio, pokemon){
   if (eligio === true) delete errors.types;
   return errors;
 }
@@ -103,9 +110,8 @@ function onSubmit(e) {
     history.push("/home");
     dispatch(resetPagePost());
   } 
-
 }
-
+console.log(errors);
 return (
     <div>
       <div className="containerLandingGeneralForm">
@@ -121,7 +127,7 @@ return (
               {/* Input Name */}
               <span> Name </span>
               <input onChange={onInputChange} id="name" name="name" type="text" value={pokemon.name} className="input"
-                required placeholder="Name..."/>
+                required placeholder="Name..." pattern="^[A-Za-z\s]+$" />
               {errors.name && <p className="error">{errors.name}</p>}
             </div>
 
@@ -137,9 +143,9 @@ return (
           <div className="formInputs">
             <div className="divFormInputs">          
               {/* Input Fuerza */}
-              <span> Force </span>
+              <span> Attack </span>
               <input onChange={onInputChange} name="attack" type="number" value={pokemon.attack} className="input"
-                required placeholder="Force..."/>
+                required placeholder="Attack..."/>
               {errors.attack && <p className="error">{errors.attack}</p>}
             </div>
 

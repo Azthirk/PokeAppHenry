@@ -57,8 +57,7 @@
         flex-direction: column-reverse;
     }
     .containerLandingGeneralForm img{
-        width: 75%;
-        height: 75%;
+        display: none;
     }
 }
 @media (max-width: 420px) {

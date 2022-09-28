@@ -51,13 +51,11 @@
 	-moz-transform: scale(0.9) ;
 }
 
-
 @media (max-width: 420px) {
     .containerLandingGeneral {
         flex-direction: column;
-        margin-left: 25px;
     }
-    .buttonx{
-        margin-right: 60px;
+    .containerMewtwo img{
+        display: none;
     }
 }

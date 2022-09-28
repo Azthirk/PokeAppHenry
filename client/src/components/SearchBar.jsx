@@ -15,6 +15,12 @@ export default function SearchBar() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types);
 
+  function validar() {
+    const input = document.getElementById('Searching');
+    if(!input.checkValidity()) return false;
+    return true;
+  }
+
   function handleInputChange(i){
     setName(i.target.value);
   };
@@ -22,7 +28,11 @@ export default function SearchBar() {
   function handleSubmit(i){
     i.preventDefault();
     dispatch(resetPage());
-    dispatch(searchPoke(name));
+    if(validar() === true){
+      dispatch(searchPoke(name));
+    }else{
+      alert("The field is not valid!")
+    }
     setName("");
     history.push("/home");
   }
@@ -51,7 +61,8 @@ export default function SearchBar() {
             type="text"
             value={name}
             placeholder="Search Pokemon..."
-            onChange= {handleInputChange}
+            onChange= {handleInputChange} 
+            pattern="^[A-Za-z\s]+$" 
           />
 
           <button className ="searchButton" type="submit" onClick= {handleSubmit}> 

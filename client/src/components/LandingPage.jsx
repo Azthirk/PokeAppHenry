@@ -20,7 +20,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div>
+        <div className="containerMewtwo">
           <img src={imageLogo2} alt="Mewtwo" width="450px" height="450px"/>
         </div>
         
