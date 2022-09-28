@@ -79,6 +79,7 @@ function validURL(str) {
   }
   return false;
 }
+console.log(details);
 
   return (
         <div>
@@ -147,10 +148,10 @@ function validURL(str) {
 
                 <div className="skills">
                   <h2>Abilities</h2>
-                  {p.skills.length > 1? <div>
+                  {p.skills.length > 1 && p.id.length < 5? <div>
                     <p>{"1: " + p.skills[0][0].toUpperCase() + p.skills[0].slice(1)}</p>
                     <p>{"2: " + p.skills[1][0].toUpperCase() + p.skills[1].slice(1)}</p>
-                  </div>:
+                  </div>: p.id.length > 5 ? "1: " + p.skills[0].toUpperCase() + p.skills.slice(1) :
                   "1: " + p.skills[0][0].toUpperCase() + p.skills[0].slice(1)}
                 </div>
             </div>

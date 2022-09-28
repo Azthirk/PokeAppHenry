@@ -75,7 +75,7 @@ const [pokemon, setPokemon] = useState({
 function handleSelect(e) {
   typeValidate(true);
   if(pokemon.types.length > 1){
-    alert("Max 2 types!");
+    alert("Max 2 types");
   }else{
     setPokemon({
       ...pokemon,
@@ -111,7 +111,17 @@ function onSubmit(e) {
     dispatch(resetPagePost());
   } 
 }
-console.log(errors);
+
+function resetType(e){
+  e.preventDefault();
+  setPokemon({
+    ...pokemon,
+    types: [],
+  });
+  errors.types = "A types is required";
+}
+
+console.log(pokemon);
 return (
     <div>
       <div className="containerLandingGeneralForm">
@@ -127,7 +137,7 @@ return (
               {/* Input Name */}
               <span> Name </span>
               <input onChange={onInputChange} id="name" name="name" type="text" value={pokemon.name} className="input"
-                required placeholder="Name..." pattern="^[A-Za-z\s]+$" maxlength="20"/>
+                required placeholder="Name..." pattern="^[A-Za-z\s]+$" maxLength="20"/>
               {errors.name && <p className="error">{errors.name}</p>}
             </div>
 
@@ -135,7 +145,7 @@ return (
               {/* Input Vida */}
               <span> HP </span>
               <input onChange={onInputChange} name="life" type="number" value={pokemon.life} className="input"
-                required placeholder="HP..."  max="999"/>
+                required placeholder="HP..." min ="1" max="999"/>
               {errors.life && <p className="error">{errors.life}</p>}
             </div>
           </div>
@@ -145,7 +155,7 @@ return (
               {/* Input Fuerza */}
               <span> Attack </span>
               <input onChange={onInputChange} name="attack" type="number" value={pokemon.attack} className="input"
-                required placeholder="Attack..."  max="999"/>
+                required placeholder="Attack..." min ="1" max="999"/>
               {errors.attack && <p className="error">{errors.attack}</p>}
             </div>
 
@@ -153,7 +163,7 @@ return (
               {/* Input Defensa */}
               <span> Defense </span>
               <input onChange={onInputChange} name="defense" type="number" value={pokemon.defense} className="input"
-                required placeholder="Defense..." max="999"/>
+                required placeholder="Defense..." min ="1" max="999"/>
               {errors.defense && <p className="error">{errors.defense}</p>}
             </div>
           </div>
@@ -163,7 +173,7 @@ return (
               {/* Input Velocidad */}
               <span> Speed </span>
               <input onChange={onInputChange} name="speed" type="number" value={pokemon.speed} className="input"
-                required placeholder="Speed..." max="999"/>
+                required placeholder="Speed..." min ="1" max="999"/>
               {errors.speed && <p className="error">{errors.speed}</p>}
             </div>
 
@@ -171,7 +181,7 @@ return (
               {/* Input Altura */}
               <span> Height </span>
               <input onChange={onInputChange} name="height" type="number" value={pokemon.height} className="input"
-                required placeholder="Height..."  max="999"/>
+                required placeholder="Height..." min ="1" max="999"/>
               {errors.height && <p className="error">{errors.height}</p>}
             </div>
           </div>
@@ -181,7 +191,7 @@ return (
               {/* Input Peso */}
               <span> Weight </span>
               <input onChange={onInputChange} name="weight" type="number" value={pokemon.weight} className="input"
-                required placeholder="Weight..." max="999"/>
+                required placeholder="Weight..." min ="1" max="999" />
               {errors.weight && <p className="error">{errors.weight}</p>}
             </div>
 
@@ -189,7 +199,7 @@ return (
               {/* Input Habilidades */}
               <span> Skills </span>
               <input onChange={onInputChange} name="skills" type="string" value={pokemon.skills} className="input"
-                required placeholder="Skills..." maxlength="50"/>
+                required placeholder="Skills..." maxLength="20"/>
               {errors.skills && <p className="error">{errors.skills}</p>}
             </div>
           </div>
@@ -199,7 +209,7 @@ return (
               {/* Input Descripcion */}
               <span> Description </span>
               <input onChange={onInputChange} name="description" type="string" value={pokemon.description} className="input"
-                required placeholder="Description..." maxlength="100"/>
+                required placeholder="Description..." maxLength="80"/>
               {errors.description && <p className="error">{errors.description}</p>}
             </div>
             <div className="divFormInputs">
@@ -212,8 +222,9 @@ return (
 
           <div className="types">
             {/* Option Tipo */}
+            <button className="botonResetTypes" onClick={resetType}> X </button>
             <select onChange={handleSelect}>
-              <option value="type"> Types </option>
+              <option id="valueType" value="type"> Types </option>
                 {types.map((e) => (
                   <option  value={e.name} key={e.name}>{e.name[0].toUpperCase() + e.name.slice(1)}</option>
                 ))}

@@ -45,6 +45,7 @@
 	border: 2px solid white;
 	border-radius: 5px;
 	outline: none;
+	width: 160px;
 }
 
 .title{
@@ -103,4 +104,12 @@
 	transform: scale(0.95) ;
 	-webkit-transform: scale(0.95) ;
 	-moz-transform: scale(0.95) ;
+}
+
+.botonResetTypes{
+	background-color: rgb(201, 25, 25);
+	font-weight: bold;
+	color:#fff;
+	border: 1px solid rgb(119, 119, 119);
+	height: 22px;
 }
