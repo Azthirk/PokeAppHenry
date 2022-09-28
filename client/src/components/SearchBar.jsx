@@ -63,6 +63,7 @@ export default function SearchBar() {
             placeholder="Search Pokemon..."
             onChange= {handleInputChange} 
             pattern="^[A-Za-z\s]+$" 
+            maxlength="15"
           />
 
           <button className ="searchButton" type="submit" onClick= {handleSubmit}> 

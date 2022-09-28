@@ -127,7 +127,7 @@ return (
               {/* Input Name */}
               <span> Name </span>
               <input onChange={onInputChange} id="name" name="name" type="text" value={pokemon.name} className="input"
-                required placeholder="Name..." pattern="^[A-Za-z\s]+$" />
+                required placeholder="Name..." pattern="^[A-Za-z\s]+$" maxlength="15"/>
               {errors.name && <p className="error">{errors.name}</p>}
             </div>
 
@@ -135,7 +135,7 @@ return (
               {/* Input Vida */}
               <span> HP </span>
               <input onChange={onInputChange} name="life" type="number" value={pokemon.life} className="input"
-                required placeholder="HP..."/>
+                required placeholder="HP..." maxlength="5"/>
               {errors.life && <p className="error">{errors.life}</p>}
             </div>
           </div>
@@ -145,7 +145,7 @@ return (
               {/* Input Fuerza */}
               <span> Attack </span>
               <input onChange={onInputChange} name="attack" type="number" value={pokemon.attack} className="input"
-                required placeholder="Attack..."/>
+                required placeholder="Attack..." maxlength="5"/>
               {errors.attack && <p className="error">{errors.attack}</p>}
             </div>
 
@@ -153,7 +153,7 @@ return (
               {/* Input Defensa */}
               <span> Defense </span>
               <input onChange={onInputChange} name="defense" type="number" value={pokemon.defense} className="input"
-                required placeholder="Defense..."/>
+                required placeholder="Defense..." maxlength="5"/>
               {errors.defense && <p className="error">{errors.defense}</p>}
             </div>
           </div>
@@ -163,7 +163,7 @@ return (
               {/* Input Velocidad */}
               <span> Speed </span>
               <input onChange={onInputChange} name="speed" type="number" value={pokemon.speed} className="input"
-                required placeholder="Speed..."/>
+                required placeholder="Speed..." maxlength="5"/>
               {errors.speed && <p className="error">{errors.speed}</p>}
             </div>
 
@@ -171,7 +171,7 @@ return (
               {/* Input Altura */}
               <span> Height </span>
               <input onChange={onInputChange} name="height" type="number" value={pokemon.height} className="input"
-                required placeholder="Height..."/>
+                required placeholder="Height..." maxlength="5"/>
               {errors.height && <p className="error">{errors.height}</p>}
             </div>
           </div>
@@ -181,7 +181,7 @@ return (
               {/* Input Peso */}
               <span> Weight </span>
               <input onChange={onInputChange} name="weight" type="number" value={pokemon.weight} className="input"
-                required placeholder="Weight..."/>
+                required placeholder="Weight..." maxlength="5"/>
               {errors.weight && <p className="error">{errors.weight}</p>}
             </div>
 
@@ -189,7 +189,7 @@ return (
               {/* Input Habilidades */}
               <span> Skills </span>
               <input onChange={onInputChange} name="skills" type="string" value={pokemon.skills} className="input"
-                required placeholder="Skills..."/>
+                required placeholder="Skills..." maxlength="50"/>
               {errors.skills && <p className="error">{errors.skills}</p>}
             </div>
           </div>
@@ -199,7 +199,7 @@ return (
               {/* Input Descripcion */}
               <span> Description </span>
               <input onChange={onInputChange} name="description" type="string" value={pokemon.description} className="input"
-                required placeholder="Description..."/>
+                required placeholder="Description..." maxlength="80"/>
               {errors.description && <p className="error">{errors.description}</p>}
             </div>
             <div className="divFormInputs">
