@@ -47,7 +47,7 @@ function typeValidate(eligio){
 }
 
 export default function Create() {
-document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%`;
+document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%)`;
 const dispatch = useDispatch();
 const history = useHistory();
 const types = useSelector((state) => state.types);

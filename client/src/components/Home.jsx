@@ -10,7 +10,7 @@ import Loading from "./Loading.jsx";
 import unknow from "../sourceImg/unknow.png";
 
 export default function Home() {
-  document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%`;
+  document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%)`;
   //Obtengo los datos de los Pokemons
   const dispatch = useDispatch();
   var pokemons = useSelector((state) => state.pokemons);
