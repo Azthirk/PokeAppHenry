@@ -1,5 +1,5 @@
 import { GET_POKEMONS, GET_DETAILS, GET_TYPE, FILTER_TYPE, FILTER_CREATED, FILTER_ATTACK, 
-SORT, SEARCH_NAME, POST_POKEMON, RESET_DETAIL, RESET_PAGE, PAGE_BACK, RESET_PAGE_POST } from "../actions";
+SORT, SEARCH_NAME, POST_POKEMON, RESET_DETAIL, RESET_PAGE, PAGE_BACK, RESET_PAGE_POST, DELETE_POKEMON } from "../actions";
 
 const initialState = {
   allPokemons: [],
@@ -21,7 +21,13 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           detail: action.payload
         };
-  
+
+    case DELETE_POKEMON: return {
+          ...state,
+          allPokemons: [],
+          pokemons: []
+        };
+
     case GET_TYPE: return {
           ...state,
           types: action.payload

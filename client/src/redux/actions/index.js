@@ -13,6 +13,7 @@ export const RESET_DETAIL = "RESET_DETAIL";
 export const RESET_PAGE = "RESET_PAGE";
 export const PAGE_BACK = "PAGE_BACK";
 export const RESET_PAGE_POST = "RESET_PAGE_POST";
+export const DELETE_POKEMON = "DELETE_POKEMON";
 
 export const getPokemons = () => async (dispatch) => {
     var json = await axios.get("/pokemons");
@@ -29,6 +30,13 @@ export const getDetail = (id) => async (dispatch) => {
       type: "GET_DETAILS",
       payload: json.data
     })
+}
+
+export const deletePokemon = (id) => async (dispatch) => {
+  await axios.get(`/pokemons/delete/${id}`);
+  return dispatch({
+    type: "DELETE_POKEMON"
+  })
 }
 
 export const resetDetail = () => {

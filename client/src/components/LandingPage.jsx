@@ -4,7 +4,7 @@ import "./Styles/LandingPage.css";
 import imageLogo from "../sourceImg/LogoPokemon2.png"
 import imageLogo2 from "../sourceImg/mewtwo.png"
 export default function LandingPage() {
-  document.body.style = `background-image: radial-gradient(circle at 50% -20.71%, #7795f8 0, #38508a 50%, #07132a 100%)`;
+  document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%`;
 
   return (
       <div className="containerLandingGeneral">

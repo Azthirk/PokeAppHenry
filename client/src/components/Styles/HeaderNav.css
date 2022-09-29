@@ -60,6 +60,19 @@
         display: none;
     }
 }
+
+@media (max-width: 520px) {
+    .pokeInfoEvolutions {
+        flex-direction: column;
+    }
+    .pokeInfoEvolutionsActual {
+        flex-direction: column;
+    }
+    .imageBackEvolution img{
+        display: none;
+    }
+}
+
 @media (max-width: 420px) {
     .cardContainer {
         flex-direction: column;

@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import CardPokemon from "./CardPokemon.jsx";
 import Paginado from "./Paginado.jsx";
 import Loading from "./Loading.jsx";
+import unknow from "../sourceImg/unknow.png";
 
 export default function Home() {
-  document.body.style = `background-image: radial-gradient(circle at 50% -20.71%, #7795f8 0, #38508a 50%, #07132a 100%)`;
+  document.body.style = `background-image: radial-gradient(circle at 50% 7.34%, #5989ff 0, #004ba0 50%, #001443 100%`;
   //Obtengo los datos de los Pokemons
   const dispatch = useDispatch();
   var pokemons = useSelector((state) => state.pokemons);
@@ -39,12 +40,15 @@ export default function Home() {
     return (
       <div className="home">
         {pokemons.length === 0 && allPokemons.length === 0 ?  <Loading/> : ""}
-        {pokemons.length === 0 && allPokemons.length !== 0 ? "No matches found" : ""}
+        {pokemons.length === 0 && allPokemons.length !== 0 ? <div className="cargandoResults">
+          <div><img src={unknow} alt="imgType" width="120px" height="120px"/></div>
+          <p>No matches found</p>
+        </div> : ""}
         
         <div className="cardContainer">
           {pokemonsForPage.map((e) => {
               return (
-                  <Link to={"/home/" + e.id} key={e.name}>
+                  <Link to={"/home/" + e.id} key={e.id}>
                     <CardPokemon
                       id={e.id}
                       name={e.name}

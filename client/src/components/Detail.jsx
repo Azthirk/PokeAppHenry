@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail, resetDetail } from "../redux/actions/index.js";
-import { Link } from "react-router-dom";
+import { getDetail, resetDetail, deletePokemon, getPokemons } from "../redux/actions/index.js";
+import { Link, useHistory } from "react-router-dom";
 import * as Images from "./sourcesComponents/images.jsx";
 import * as Colors from "./sourcesComponents/colors.jsx";
 import image2 from "../sourceImg/pikachu.png";
@@ -14,6 +14,7 @@ import Loading from "./Loading.jsx";
 
 export default function Detail(pokeId) {
 const dispatch = useDispatch();
+const history = useHistory();
 var details = useSelector((state) => state.detail);
 
 
@@ -81,6 +82,17 @@ function validURL(str) {
 }
 console.log(details);
 
+function reset(id){
+  dispatch(resetDetail());
+  dispatch(getDetail(id));
+}
+function borroPokemon(id){
+  dispatch(deletePokemon(id));
+  alert("Pokemon Successfully Eliminated!");
+  history.push("/home");
+  dispatch(getPokemons());
+
+}
   return (
         <div>
         {!details? <Loading/> : ""}
@@ -156,16 +168,56 @@ console.log(details);
                 </div>
             </div>
 
-            {p.evolutionNext?
-            <div><h2>Evolutions</h2>
-              <div className="pokeInfo">
-                <div><img src={p.image} alt="imgActual" width="128px" height="128px"/><p>{p.name[0].toUpperCase() + p.name.slice(1)}</p></div>
-                <div><img src={imagenBack2} alt="imgActualb" width="48px" height="48px"/></div>
-                <div><img src={p.evolutionNext[0].image} alt="imgEvoNext" width="128px" height="128px"/><p>{p.evolutionNext[0].name[0].toUpperCase() + p.evolutionNext[0].name.slice(1)}</p></div>
-                
-              </div>
-            </div>:""}
+            <h2>Evolutions</h2>
+            <div className="pokeInfoEvolutions">
 
+              {p.evolutionBack?
+              <div>
+                <div className="pokeInfo">
+                  <div className="imgEvolutionNext">
+                    <Link to={"/home/" + p.evolutionBack[0].id} key={p.evolutionBack[0].id} onClick={() => reset(p.evolutionBack[0].id)} style={{ textDecoration: 'none' }}>
+                      <img src={p.evolutionBack[0].image} alt="imgEvoNext" width="128px" height="128px"/><p>{p.evolutionBack[0].name[0].toUpperCase() + p.evolutionBack[0].name.slice(1)} (Previus)</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>:""}
+              
+              <div className="pokeInfoEvolutionsActual">   
+              {p.evolutionBack ?
+                <div className="imageBackEvolution">
+                  <img src={imagenBack} alt="imgActualb" width="48px" height="48px"/>
+                </div>:""}    
+
+                <div>
+                {!validURL(p.image) && p.id.length > 5? <img src={image2} alt="imagen" width="128" height="128px"/> 
+                :<img src={p.image} alt="imagen" width="128px" height="128px"/>}
+                  
+                  <p>{p.name[0].toUpperCase() + p.name.slice(1)} (Actual)</p>
+                </div>
+
+                {p.evolutionNext ?
+                <div className="imageBackEvolution">
+                  <img src={imagenBack2} alt="imgActualb" width="48px" height="48px"/>
+                </div>:""}   
+              </div>
+
+              {p.evolutionNext?
+              <div>
+                <div className="pokeInfo">
+                  <div className="imgEvolutionNext">
+                    <Link to={"/home/" + p.evolutionNext[0].id} key={p.evolutionNext[0].id} onClick={() => reset(p.evolutionNext[0].id)} style={{ textDecoration: 'none' }}>
+                      <img src={p.evolutionNext[0].image} alt="imgEvoNext" width="128px" height="128px"/><p>{p.evolutionNext[0].name[0].toUpperCase() + p.evolutionNext[0].name.slice(1)} (Next)</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>:""}
+
+            </div>
+
+            <div>
+              {p.id.length > 5 ? <button className="bottomsDeleted" onClick={() => borroPokemon(p.id)}>Delete</button> : ""}
+            </div>
+                
             </div>
           ))}
 

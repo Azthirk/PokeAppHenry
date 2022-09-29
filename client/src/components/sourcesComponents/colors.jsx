@@ -1,7 +1,7 @@
 const bug = "radial-gradient(circle at 50% -20.71%, #d2e53a 0, #b9de2f 16.67%, #9bd41e 33.33%, #77c600 50%, #4eb800 66.67%, #08ad00 83.33%, #00a500 100%)";
 const dark = "radial-gradient(circle at 50% -20.71%, #30342c 0, #20211e 25%, #0d0b10 50%, #000000 75%, #000000 100%)";
 const dragon = "radial-gradient(circle at 50% -20.71%, #747bed 0, #004fc9 50%, #002aa5 100%)";
-const electric = "radial-gradient(circle at 50% -20.71%, #ecca4f 0, #e1b333 25%, #d19700 50%, #c17b00 75%, #b56300 100%)";
+const electric = "radial-gradient(circle at 50% 7.34%, #e9df14 0, #e7c703 16.67%, #dead00 33.33%, #cf9100 50%, #bd7705 66.67%, #ad600c 83.33%, #9e4d11 100%)";
 const fairy = "radial-gradient(circle at 50% -20.71%, #ff9eeb 0, #ff92e9 16.67%, #ff84e4 33.33%, #ec74dd 50%, #d565d7 66.67%, #c059d2 83.33%, #ab51d0 100%)";
 const fighting = "radial-gradient(circle at 50% -20.71%, #ff5d74 0, #fc4c72 16.67%, #ef346e 33.33%, #df0068 50%, #ce0063 66.67%, #c00060 83.33%, #b30061 100%)";
 const fire = "radial-gradient(circle at 50% -20.71%, #ffc53a 0, #ffb52e 16.67%, #ffa21d 33.33%, #ff8c00 50%, #f57500 66.67%, #ee6000 83.33%, #ea4b00 100%)";

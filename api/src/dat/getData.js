@@ -36,7 +36,7 @@ const DataInfo = async () => {
   var infoxtotal = [];
   var test = [];
 
-  for(var i = 0; i < 4; i++){
+  for(var i = 0; i < 6; i++){
     infoxtotal[i] = await getDataInfoForArray(pokeConst, pokeLimits);
     pokeLimits += pokeConst;
     test = [...test, ...infoxtotal[i]];

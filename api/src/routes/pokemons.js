@@ -6,6 +6,7 @@ const DataForID = require("../dat/getDataForID");
 const router = Router();
 const { Pokemon, Type } = require("../db.js");
 const axios = require("axios");
+var db = require("../db.js");
 
 router.get("/", async (req, res) => {
 
@@ -79,5 +80,23 @@ router.post("/", async (req, res) => {
     res.send(error);
   }
 })
+
+router.get("/delete/:id", async (req, res) => {
+	const { id } = req.params;
+  try{
+    const pokeName = await InfoDataBase();
+    const searchID = pokeName.filter(e => e.id === id);
+    if(!searchID) return res.status(404).send("ERROR");
+    await Pokemon.destroy({
+      where: {
+        id: id
+      }
+    });
+    res.status(200).send("Borrado");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 
 module.exports = router;

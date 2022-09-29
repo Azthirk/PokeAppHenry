@@ -107,9 +107,11 @@
 }
 
 .botonResetTypes{
+	cursor: pointer;
 	background-color: rgb(201, 25, 25);
 	font-weight: bold;
 	color:#fff;
 	border: 1px solid rgb(119, 119, 119);
 	height: 22px;
+	border-radius: 3px;
 }
