@@ -80,7 +80,7 @@ function validURL(str) {
   }
   return false;
 }
-console.log(details);
+
 
 function reset(id){
   dispatch(resetDetail());
@@ -215,7 +215,7 @@ function borroPokemon(id){
             </div>
 
             <div>
-              {p.id.length > 5 ? <button className="bottomsDeleted" onClick={() => borroPokemon(p.id)}>Delete</button> : ""}
+              {p.id.length > 5 ? <button className="bottomsDeleted" onClick={() => borroPokemon(p.id)}>DELETE</button> : ""}
             </div>
                 
             </div>

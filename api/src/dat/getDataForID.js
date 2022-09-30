@@ -2,6 +2,8 @@ const axios = require("axios");
 const InfoDataBase = require("../dat/getDataBase");
 const getDataForName = require("../dat/getDataForName");
 
+
+
 const DataForID = async (id) => {
     var contador = 0;
     const dataBase = await InfoDataBase();
@@ -18,6 +20,8 @@ const DataForID = async (id) => {
     .then((pokeDatos) => {
        return pokeDatos.map((i) => i.data);
     });
+
+    if(resp.length === 0 ) return null; //Si no hay info, retorno null
 
     const desc = await axios.get(resp[0].species.url).then((pokeDatos) => {
       return pokeDatos.data;
@@ -78,7 +82,7 @@ const DataForID = async (id) => {
         colorPoke: desc.color.name
       }
     });
-
+    
     return pokeId;
 }
 

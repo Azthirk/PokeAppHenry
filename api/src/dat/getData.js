@@ -31,7 +31,8 @@ const getDataInfoForArray = async (pokeTo, limitPoke) => {
 };
 
 const DataInfo = async () => {
-  var pokeConst = 40;
+  const pokeConst = 40;
+  const totalPokemons = 250;
   var pokeLimits = 0;
   var infoxtotal = [];
   var test = [];
@@ -41,6 +42,12 @@ const DataInfo = async () => {
     pokeLimits += pokeConst;
     test = [...test, ...infoxtotal[i]];
   }
+
+  if(totalPokemons - pokeLimits !== 0){
+    infoxtotal[i] = await getDataInfoForArray((totalPokemons - pokeLimits), pokeLimits);
+    test = [...test, ...infoxtotal[i]];
+  }
+
   return test;
 };
   

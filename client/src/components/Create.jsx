@@ -214,7 +214,7 @@ return (
             </div>
             <div className="divFormInputs">
               {/* Input Image */}
-              <span> Image URL (Optional) </span>
+              <span> Image URL(Optional) </span>
               <input onChange={onInputChange} name="image" type="string" value={pokemon.image} className="input"
                placeholder="YourURL..."/>
             </div>
@@ -238,9 +238,9 @@ return (
 
           {/* Boton crear */}
           <Link to="/home" > 
-            <button className="bottoms">Cancel</button>
+            <button className="bottoms">CANCEL</button>
           </Link> 
-          <button type="submit" className="bottoms">Create</button>
+          <button type="submit" className="bottoms">CREATE</button>
         </form>
 
       </div>

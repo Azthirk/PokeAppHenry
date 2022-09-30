@@ -1,3 +1,4 @@
+
 .Filtros {
     position: relative;
     display: inline-block;
@@ -5,6 +6,7 @@
 }
 
 .Filtros select {
+    font-family: 'Gotham', sans-serif;
     outline: 0;
     border: 0;
     box-shadow: none;

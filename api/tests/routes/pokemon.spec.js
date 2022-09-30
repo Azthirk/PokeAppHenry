@@ -2,12 +2,20 @@
 const { expect } = require('chai');
 const session = require('supertest-session');
 const app = require('../../src/app.js');
-const { Pokemon, conn } = require('../../src/db.js');
+const { Pokemon, conn, Type } = require('../../src/db.js');
 
 const agent = session(app);
 const pokemon = {
   name: 'Pikachu',
-  image: "",
+  life: 999,
+  defense: 999,
+  attack: 999,
+  speed: 999,
+  weight: 999,
+  height: 999,
+  skills: "Test",
+  image:"NO",
+  description: "Test",
 };
 
 describe('Pokemon routes', () => {
@@ -18,27 +26,10 @@ describe('Pokemon routes', () => {
   }));
 
   beforeEach(() => Pokemon.sync({ force: true })
-    .then(() => Pokemon.create(pokemon)));
-
-    describe("/pokemons", function () {
-      it("Deberia retornar status 200", function () {
-        return agent.get("/pokemons").expect(function (res) {
-          expect(res.status).equal(200);
-        });
-      }).timeout(10000);
-      it("El elemento recibido deberia ser un objeto", function () {
-        return agent.get("/pokemons").expect(function (res) {
-          expect(typeof res.body[0]).equal("object");
-        });
-      }).timeout(10000);
-    });
-    
+    // .then(() => Pokemon.create(pokemon))
+    // .then(() => Type.create(pokemon)));
+    .then());
     describe("/pokemons?name=", function () {
-      it("Deberia devolver las propiedades del Pokemon pasado por nombre", function () {
-        return agent.get("/pokemons?name=bulbasaur").expect(function (res) {
-          expect(typeof res.body[0]).equal("object");
-        });
-      }).timeout(3000);
       it("Deberia devolver el nombre del Pokemon pasado", function () {
         return agent.get("/pokemons?name=bulbasaur").expect(function (res) {
           expect(res.body[0].name).equal("bulbasaur");

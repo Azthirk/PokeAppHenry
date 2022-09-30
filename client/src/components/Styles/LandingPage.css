@@ -1,3 +1,4 @@
+
 .containerLandingGeneral{
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +17,7 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.438);
     color: white;
     margin-bottom: 40px;
+    
 }
 
 .containerLanding img{
@@ -23,6 +25,7 @@
 }
 
 .texto{
+    font-family: 'Gotham XLight', sans-serif;
     margin-top: 30px;
     width: 250px;
     margin-left: 70px;
@@ -31,7 +34,8 @@
 
 .buttonx {
     color:rgb(0, 113, 218);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Gotham XLight', sans-serif;
+    font-weight: bold;
     font-size: 20px;
     text-decoration: none;
     height: 55px;
