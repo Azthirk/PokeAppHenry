@@ -4,6 +4,7 @@ SORT, SEARCH_NAME, POST_POKEMON, RESET_DETAIL, RESET_PAGE, PAGE_BACK, RESET_PAGE
 const initialState = {
   allPokemons: [],
   pokemons: [],
+  pokemonsFiltroBackup: [],
   detail: null,
   types: [],
   pageBack: 1
@@ -43,7 +44,8 @@ const rootReducer = (state = initialState, action) => {
           );
       return {
         ...state,
-        pokemons: typeFiltered
+        pokemons: typeFiltered,
+        pokemonsFiltroBackup: typeFiltered
       };
 
     case FILTER_CREATED:
@@ -53,7 +55,8 @@ const rootReducer = (state = initialState, action) => {
           : state.allPokemons.filter((e) => e.id.length === undefined);
       return {
         ...state,
-        pokemons: action.payload === "ALL" ? state.allPokemons : createdFilter
+        pokemons: action.payload === "ALL" ? state.allPokemons : createdFilter,
+        pokemonsFiltroBackup: createdFilter
       };
 
     case FILTER_ATTACK:
@@ -65,7 +68,7 @@ const rootReducer = (state = initialState, action) => {
         });
         return {
           ...state,
-          pokemons: action.payload === "FORCE" ? state.allPokemons : attackFilter
+          pokemons: action.payload === "FORCE" ? state.pokemonsFiltroBackup : attackFilter
      };
 
     case SEARCH_NAME: return {
@@ -81,7 +84,7 @@ const rootReducer = (state = initialState, action) => {
       });
       return {
         ...state,
-        pokemons: action.payload === "FILTER" ? state.allPokemons : orderedCharacters
+        pokemons: action.payload === "FILTER" ? state.pokemonsFiltroBackup : orderedCharacters
     };
 
     case POST_POKEMON:
