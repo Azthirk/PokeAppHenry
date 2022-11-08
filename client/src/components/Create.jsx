@@ -9,6 +9,16 @@ import "./Styles/Create.css";
 
 var errors = {};
 
+function espacios(string){
+  var contador = 0;
+
+  for(var i = 0; i < string.length; i++){
+    if(string[i] === " ") contador++;
+  }
+  if(contador >= 3 || string[0] === " ") return false;
+  return true;
+}
+
 function validar() {
   const input = document.getElementById('name');
   if(!input.checkValidity()) return false;
@@ -37,7 +47,7 @@ function validate(pokemon){
   if (pokemon.description) delete errors.description;
   if (pokemon.types.length > 0) delete errors.types;
   if(validar() === false) errors.name = "Invalid character";
-
+  if(espacios(pokemon.name) === false) errors.name = "Max 2 spaces";
   return errors;
 }
 
@@ -114,6 +124,7 @@ function onSubmit(e) {
 
 function resetType(e){
   e.preventDefault();
+  document.getElementById("idTypesSelect").selectedIndex = 0;
   setPokemon({
     ...pokemon,
     types: [],
@@ -121,7 +132,6 @@ function resetType(e){
   errors.types = "A types is required";
 }
 
-console.log(pokemon);
 return (
     <div>
       <div className="containerLandingGeneralForm">
@@ -223,7 +233,7 @@ return (
           <div className="types">
             {/* Option Tipo */}
             <button className="botonResetTypes" onClick={resetType}> X </button>
-            <select onChange={handleSelect}>
+            <select id="idTypesSelect" onChange={handleSelect}>
               <option id="valueType" value="type"> Types </option>
                 {types.map((e) => (
                   <option  value={e.name} key={e.name}>{e.name[0].toUpperCase() + e.name.slice(1)}</option>

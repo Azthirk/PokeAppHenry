@@ -2,8 +2,6 @@ const axios = require("axios");
 const InfoDataBase = require("../dat/getDataBase");
 const getDataForName = require("../dat/getDataForName");
 
-
-
 const DataForID = async (id) => {
     var contador = 0;
     const dataBase = await InfoDataBase();

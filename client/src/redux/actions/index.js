@@ -6,6 +6,7 @@ export const GET_TYPE = "GET_TYPE";
 export const FILTER_TYPE = "FILTER_TYPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 export const FILTER_ATTACK = "FILTER_ATTACK";
+export const FILTER_DEFENSE = "FILTER_DEFENSE";
 export const SORT = "SORT";
 export const SEARCH_NAME = "SEARCH_NAME";
 export const POST_POKEMON = "POST_POKEMON";
@@ -89,6 +90,13 @@ export const filterCreated = (payload) => {
 export const filterAttack = (payload) => {
   return {
     type: "FILTER_ATTACK",
+    payload
+  }
+}
+
+export const filterDefense = (payload) => {
+  return {
+    type: "FILTER_DEFENSE",
     payload
   }
 }

@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => { //Busqueda por id
 });
 
 router.post("/", async (req, res) => {
-  const { name, life, attack, defense, image, speed, height, weight, types, skills, description} = req.body;
+  const { name, life, attack, defense, image, speed, height, weight, types, skills, description, like} = req.body;
 
 
   try {

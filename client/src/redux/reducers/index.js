@@ -1,5 +1,5 @@
 import { GET_POKEMONS, GET_DETAILS, GET_TYPE, FILTER_TYPE, FILTER_CREATED, FILTER_ATTACK, 
-SORT, SEARCH_NAME, POST_POKEMON, RESET_DETAIL, RESET_PAGE, PAGE_BACK, RESET_PAGE_POST, DELETE_POKEMON } from "../actions";
+SORT, SEARCH_NAME, POST_POKEMON, RESET_DETAIL, RESET_PAGE, PAGE_BACK, RESET_PAGE_POST, DELETE_POKEMON, FILTER_DEFENSE } from "../actions";
 
 const initialState = {
   allPokemons: [],
@@ -15,7 +15,8 @@ const rootReducer = (state = initialState, action) => {
     case GET_POKEMONS: return {
         ...state,
         pokemons: action.payload,
-        allPokemons: action.payload
+        allPokemons: action.payload,
+        pokemonsFiltroBackup: action.payload
       };
 
     case GET_DETAILS: return {
@@ -70,6 +71,18 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           pokemons: action.payload === "FORCE" ? state.pokemonsFiltroBackup : attackFilter
      };
+
+     case FILTER_DEFENSE:
+      let defenseFilter = [...state.pokemons];
+      defenseFilter = defenseFilter.sort((a, b) => {
+        if(action.payload === "HIGHDEFENSE") if (a.defense > b.defense) return - 1;
+        if(action.payload === "LOWERDEFENSE") if (a.defense < b.defense) return - 1;
+        return 0;
+      });
+      return {
+        ...state,
+        pokemons: action.payload === "DEFENSE" ? state.pokemonsFiltroBackup : defenseFilter
+    };
 
     case SEARCH_NAME: return {
         ...state,

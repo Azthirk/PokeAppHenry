@@ -34,13 +34,8 @@ export default function SearchBar() {
       alert("The field is not valid!")
     }
     setName("");
-    history.push("/home");
   }
-
-  function handleReset(){
-    dispatch(resetPage());
-    history.push("/home");
-  }
+  
   function handleViewFilter(){
     setMostrarComponente(!mostrarComponente)
   }

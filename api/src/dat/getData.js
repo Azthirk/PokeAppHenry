@@ -32,7 +32,7 @@ const getDataInfoForArray = async (pokeTo, limitPoke) => {
 
 const DataInfo = async () => {
   const pokeConst = 40;
-  const totalPokemons = 250;
+  const totalPokemons = 251;
   var pokeLimits = 0;
   var infoxtotal = [];
   var test = [];

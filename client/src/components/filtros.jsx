@@ -1,9 +1,10 @@
 import React from "react";
 import "./Styles/filtros.css";
-import { filterType, filterCreated, Sort, filterAttack, pageBack} from "../redux/actions/index.js";
+import { filterType, filterCreated, Sort, filterAttack, pageBack, filterDefense} from "../redux/actions/index.js";
 export default function filtros({dispatchx, typePokemons}){
 
     function resetFilter(){
+      document.getElementById("idDefense").selectedIndex = 0;
       document.getElementById("idAttack").selectedIndex = 0;
       document.getElementById("idAZ").selectedIndex = 0;
     }
@@ -18,11 +19,19 @@ export default function filtros({dispatchx, typePokemons}){
     function handleFilterAttack(e) {
         dispatchx(filterAttack(e.target.value));
         document.getElementById("idAZ").selectedIndex = 0;
+        document.getElementById("idDefense").selectedIndex = 0;
+    }
+
+    function handleFilterDefense(e) {
+      dispatchx(filterDefense(e.target.value));
+      document.getElementById("idAttack").selectedIndex = 0;
+      document.getElementById("idAZ").selectedIndex = 0;
     }
 
     function onSelectsChange(e) {
         dispatchx(Sort(e.target.value));
         document.getElementById("idAttack").selectedIndex = 0;
+        document.getElementById("idDefense").selectedIndex = 0;
     }
     
     function handleFilterCreated(e) {
@@ -45,6 +54,12 @@ export default function filtros({dispatchx, typePokemons}){
             <option value="FORCE"> Attack </option>
             <option value="HIGHFORCE">Max Attack</option>
             <option value="LOWERFORCE">Min Attack</option>
+          </select>
+
+          <select id="idDefense" name="selects" onChange={handleFilterDefense} className="defense" >
+            <option value="DEFENSE"> Defense </option>
+            <option value="HIGHDEFENSE">Max Defense</option>
+            <option value="LOWERDEFENSE">Min Defense</option>
           </select>
 
           <select id="idAZ" name="select" onChange={onSelectsChange} className="a-z">

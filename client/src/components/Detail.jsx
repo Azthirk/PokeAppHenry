@@ -93,6 +93,7 @@ function borroPokemon(id){
   dispatch(getPokemons());
 
 }
+console.log(details);
   return (
         <div>
         {!details? <Loading/> : ""}
@@ -160,11 +161,12 @@ function borroPokemon(id){
 
                 <div className="skills">
                   <h2>Abilities</h2>
-                  {p.skills.length > 1 && p.id.length < 5? <div>
+                  {p.skills.length > 1 && typeof p.id !== "string" ? <div>
                     <p>{"1: " + p.skills[0][0].toUpperCase() + p.skills[0].slice(1)}</p>
                     <p>{"2: " + p.skills[1][0].toUpperCase() + p.skills[1].slice(1)}</p>
                   </div>: p.id.length > 5 ? "1: " + p.skills[0].toUpperCase() + p.skills.slice(1) :
                   "1: " + p.skills[0][0].toUpperCase() + p.skills[0].slice(1)}
+
                 </div>
             </div>
 

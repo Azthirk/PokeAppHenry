@@ -4,6 +4,7 @@ import "./Styles/HeaderNav.css";
 import { Link } from "react-router-dom";
 import Logo from "../sourceImg/LogoPokemon.png";
 import SearchBar from "./SearchBar.jsx";
+
 export default function Nav(onSearch) {
 
   return (

@@ -6,7 +6,7 @@
     align-items: center;
     background-color: black;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 21px;
     height: auto;
 }
@@ -41,9 +41,15 @@
     margin-left: 10px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 914px) {
     .header {
         flex-direction: column;
+    }
+    .header select{
+        margin-bottom: 5px;
+    }
+    .linkedinPage{
+        margin-bottom: 30px;
     }
 }
 
@@ -75,6 +81,10 @@
 @media (max-width: 420px) {
     .cardContainer {
         flex-direction: column;
+    }
+    .linkedinPage{
+        width: 250px;
+        margin-left: 70px;
     }
 }
 

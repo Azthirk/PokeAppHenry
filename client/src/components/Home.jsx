@@ -61,6 +61,7 @@ export default function Home() {
           }
 
         </div>
+
         {pokemons.length > 1 ?
         <div className="ContenedorPaginado">
           {pageActual !== 1 ? <button className="btnx" onClick={() => pags(pageActual - 1)}> Back </button> : <button className="btnx" style={{visibility: "hidden"}}> Back </button>}
@@ -71,8 +72,9 @@ export default function Home() {
           {pageActual !== Math.ceil(pokemons.length / 12) ? <button className="btnx" onClick={() => pags(pageActual + 1)}> Next </button> : <button className="btnx" style={{visibility: "hidden"}}> Next </button>}
         </div>: ""}
 
-
       </div>
+
+
     );
   }
 

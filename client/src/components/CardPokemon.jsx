@@ -48,7 +48,7 @@ return (
       id >= 10 && id < 100 ? "0" + id :
       id.length > 5 ? "DataBase"
       : id} </p>
-
+      <p>{}</p>
       <h3 className="name"> {name.charAt(0).toUpperCase() + name.slice(1)}</h3>
 
       <div className="iconsType">
