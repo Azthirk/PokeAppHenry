@@ -19,6 +19,14 @@ Ejecuta los siguientes comandos tanto en la carpeta "api" como en la carpeta "cl
 2. `npm start`: Comienza a correr la aplicación de forma local por lo que se puede ver desde el navegador accediendo a http://localhost:3000
 
 ////////////////////////ENGLISH////////////////////////////////
+## Project Objectives
+
+- Build an App using React, Redux, Node and Sequelize.
+- Affirm and connect the concepts learned in the race.
+- Learn best practices.
+- Learn and practice the GIT workflow.
+- Use and practice testing.
+
 ### Instructions to run the project
 
 Run the following commands in both the "api" folder and the "client" folder
@@ -27,7 +35,7 @@ Run the following commands in both the "api" folder and the "client" folder
 
 2. `npm start`: Starts running the application locally so it can be seen from the browser by accessing http://localhost:3000
 
-### Muestra
+### Muestra/Sample
 
 Deploy: https://client-deploy-sigma.vercel.app/
 
