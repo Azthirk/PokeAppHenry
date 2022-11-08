@@ -1,4 +1,4 @@
-# Individual Project - Henry Pokemon
+# Individual Project - Poke App
 
 <img height="150" src="./pokemon.png" />
 
